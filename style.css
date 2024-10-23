@@ -1,0 +1,80 @@
+/* Estilo geral do corpo */
+body {
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: radial-gradient(circle, #000428, #004e92);
+    color: #fff;
+}
+
+/* Estilo para o título e o placar */
+h3 {
+    font-size: 2rem;
+    color: #00FFFF;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+    margin-bottom: 30px;
+}
+
+#result {
+    font-weight: bold;
+    margin-left: 10px;
+    color: #FFD700;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+}
+
+/* Estilo da grade */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    grid-template-rows: repeat(4, 120px);
+    gap: 15px;
+    perspective: 1000px;
+}
+
+/* Estilo geral das cartas */
+.grid div {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(145deg, #00f260, #0575e6);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+    transition: transform 0.6s, background-color 0.3s, box-shadow 0.3s;
+    backface-visibility: hidden;
+}
+
+/* Efeito de virada */
+.grid div.flipped {
+    background-color: #FFD700;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 1);
+    transform: rotateY(180deg);
+}
+
+/* Efeito ao clicar */
+.grid div:hover {
+    background-color: #1D2B64;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+}
+
+/* Estilo ao acertar o par */
+.grid div.matched {
+    background-color: #32CD32;
+    box-shadow: 0 0 20px rgba(50, 205, 50, 1);
+    cursor: default;
+    transform: none;
+}
+
+/* Transição suave ao acertar */
+.grid div.matched:hover {
+    transform: none;
+}
